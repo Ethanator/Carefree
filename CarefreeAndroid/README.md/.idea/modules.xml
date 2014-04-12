@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/README.md.iml" filepath="$PROJECT_DIR$/README.md.iml" />
-      <module fileurl="file://$PROJECT_DIR$/appv1/appv1.iml" filepath="$PROJECT_DIR$/appv1/appv1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Carefree.iml" filepath="$PROJECT_DIR$/Carefree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Carefree/Carefree-Carefree.iml" filepath="$PROJECT_DIR$/Carefree/Carefree-Carefree.iml" />
     </modules>
   </component>
 </project>
