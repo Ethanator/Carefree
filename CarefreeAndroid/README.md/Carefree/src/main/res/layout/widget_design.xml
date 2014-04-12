@@ -10,10 +10,12 @@
         android:layout_height="wrap_content"
         android:text="@string/button_send"/>
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:id="@+id/listViewWidget" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView"
+        android:layout_gravity="right" />
 
     <TextView
         android:id="@+id/empty_view"
@@ -22,7 +24,6 @@
         android:gravity="center"
         android:text="@string/empty_string"
         android:textColor="#ffffff"
-        android:textSize="20sp"
-        android:visibility="gone" />
+        android:textSize="20sp"/>
 
 </LinearLayout>

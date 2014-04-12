@@ -27,41 +27,17 @@ public class ExampleAppWidgetProvider extends AppWidgetProvider {
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
 
-            RemoteViews remoteViews = updateWidgetListView(context,
-                    appWidgetIds[i]);
-            appWidgetManager.updateAppWidget(appWidgetIds[i],
-                    remoteViews);
+           // RemoteViews remoteViews = updateWidgetListView(context,appWidgetIds[i]);
+            //appWidgetManager.updateAppWidget(appWidgetIds[i],remoteViews);
 
             // Get the layout for the App Widget and attach an on-click listener
             // to the button
-            //RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_design);
-           // views.setOnClickPendingIntent(R.id.button, pendingIntent);
+            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_design);
+           views.setOnClickPendingIntent(R.id.button, pendingIntent);
 
             // Tell the AppWidgetManager to perform an update on the current app widget
-            //appWidgetManager.updateAppWidget(appWidgetId, views);
+            appWidgetManager.updateAppWidget(appWidgetId, views);
         }
     }
 
-    private RemoteViews updateWidgetListView(Context context,
-                                             int appWidgetId) {
-
-        //which layout to show on widget
-        RemoteViews remoteViews = new RemoteViews(
-                context.getPackageName(),R.layout.widget_design);
-
-        //RemoteViews Service needed to provide adapter for ListView
-        Intent svcIntent = new Intent(context, WidgetService.class);
-        //passing app widget id to that RemoteViews Service
-        svcIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
-        //setting a unique Uri to the intent
-        //don't know its purpose to me right now
-        svcIntent.setData(Uri.parse(
-                svcIntent.toUri(Intent.URI_INTENT_SCHEME)));
-        //setting adapter to listview of the widget
-        remoteViews.setRemoteAdapter(appWidgetId, R.id.listViewWidget,
-                svcIntent);
-        //setting an empty view in case of no data
-        remoteViews.setEmptyView(R.id.listViewWidget, R.id.empty_view);
-        return remoteViews;
-    }
 }
