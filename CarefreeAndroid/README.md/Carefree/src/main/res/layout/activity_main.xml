@@ -5,7 +5,37 @@
     android:orientation="horizontal"
     tools:context="com.carefree.carefree.MainActivity">
 
-    <EditText android:id="@+id/edit_message"
+    <EditText android:id="@+id/first_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/full_name" />
+
+    <EditText android:id="@+id/last_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/edit_message" />
+
+    <EditText android:id="@+id/contact_first_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/edit_message" />
+
+    <EditText android:id="@+id/contact_last_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/edit_message" />
+
+    <EditText android:id="@+id/contact_phone_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:inputType="phone" />
+
+    <EditText android:id="@+id/allergies"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
