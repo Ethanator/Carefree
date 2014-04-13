@@ -10,11 +10,22 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
 import android.widget.EditText;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import 	android.content.Context;
 import android.widget.Toast;
+
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 
 public class MainActivity extends Activity {
     public final static String EXTRA_MESSAGE = "com.Carefree.Carefree.MESSAGE";
@@ -72,7 +83,7 @@ public class MainActivity extends Activity {
     }
 
     public void saveCard() {
-        String filename = "mycard.txt";
+        String filename = getString(R.string.local_file_name);
         FileOutputStream ostream;
         boolean save = true;
 
@@ -94,32 +105,59 @@ public class MainActivity extends Activity {
         data.add(contactLastName.getText().toString());
         data.add(contactPhoneNumber.getText().toString());
 
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 7; i++) {
             if (data.get(i).equals("")) save = false;
 
         }
-        if (save) {
-            //Log.d("Debug1", "It works here");
-            try {
-                ostream = openFileOutput(filename, Context.MODE_PRIVATE);
-                ostream.write(("FirstName\t"+data.get(0)).getBytes());
-                ostream.write(("LastName\t"+data.get(1)).getBytes());
-                ostream.write(("Age\t"+data.get(2)).getBytes());
-                ostream.write(("Allergies\t"+data.get(3)).getBytes());
-                ostream.write(("ContactFirstName\t"+data.get(4)).getBytes());
-                ostream.write(("ContactLastNamedata\t"+data.get(5)).getBytes());
-                ostream.write(("ContactPhoneNumber\t"+data.get(6)).getBytes());
-                ostream.close();
-            } catch (Exception e) {
-                e.printStackTrace();
+        //Log.d("Debug1", "It works here");
+        if (save) try {
+            ostream = openFileOutput(filename, Context.MODE_PRIVATE);
+            ostream.write(getString(R.string.local_file_header).getBytes());
+            for (int i = 0; i < 7; ++i) {
+                if (i != 0) ostream.write('\t');
+                ostream.write(data.get(i).getBytes());
             }
-        } else {
+            ostream.write('\n');
+            ostream.close();
+            uploadData();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        else {
             Context context = getApplicationContext();
             CharSequence text = "You need to fill out all of the fields.";
             int duration = Toast.LENGTH_SHORT;
 
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
+        }
+    }
+
+    public void uploadData() {
+        Firebase f = new Firebase(getString(R.string.firebase_url));
+
+        String csvString = "";
+        String filename = getString(R.string.local_file_name);
+        FileInputStream fis;
+
+        try {
+            fis = openFileInput(filename);
+            byte[] input = new byte[fis.available()];
+            while (fis.read(input) != -1) {
+                csvString += new String(input);
+            }
+            String[] keys = csvString.split("\n")[0].split("\t");
+            String[] vals = csvString.split("\n")[1].split("\t");
+
+            Map<String, String> map = new HashMap<String, String>();
+            for (int i = 0; i < keys.length; ++i)
+                map.put(keys[i], vals[i]);
+            f.push().setValue(map);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

@@ -20,4 +20,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile files('src/main/libs/firebase-client-jvm-LATEST.jar')
+    compile files('src/main/libs/firebase-simple-login-LATEST.jar')
 }

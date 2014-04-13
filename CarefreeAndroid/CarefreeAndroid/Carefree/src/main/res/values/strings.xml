@@ -19,5 +19,8 @@
     <string name="title_activity_location_message">LocationActivity</string>
     <string name="empty_string">N/A</string>
     <string name="title_activity_display_info">DisplayInfoActivity</string>
+    <string name="local_file_header">"FirstName\tLastName\tAge\tAllergies\tContactFirstName\tContactLastName\tContactPhone\n"</string>
+    <string name="local_file_name">"mycard.txt"</string>
+    <string name="firebase_url">"https://carefree.firebaseio.com"</string>
 
 </resources>
