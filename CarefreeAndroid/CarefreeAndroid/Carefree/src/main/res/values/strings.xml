@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Carefree</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="first_name">Enter your first name</string>
+    <string name="last_name">Your last name</string>
+    <string name="age">Your age</string>
+    <string name="contact_first_name">Your contact\'s first name</string>
+    <string name="contact_last_name">Your contact\'s last name</string>
+    <string name="allergies">Enter any allergies here</string>
+    <string name="contact_phone_number">Your contact\'s phone number</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+    <string name="button_save">Save Card</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_display_message">DisplayMessageActivity</string>
+    <string name="title_activity_location_message">LocationActivity</string>
+    <string name="empty_string">N/A</string>
+    <string name="title_activity_display_info">DisplayInfoActivity</string>
+
+</resources>

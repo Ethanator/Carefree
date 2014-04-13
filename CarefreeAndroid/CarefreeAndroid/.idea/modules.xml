@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Carefree.iml" filepath="$PROJECT_DIR$/Carefree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CarefreeAndroid.iml" filepath="$PROJECT_DIR$/CarefreeAndroid.iml" />
+    </modules>
+  </component>
+</project>
+
