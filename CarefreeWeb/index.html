@@ -1,12 +1,10 @@
 <!doctype html>
 <html>
   <head>
-    <title>
-    	Carefree - a healthcare platform that ensures care is delivered as soon as possible
-    </title>
     <meta charset="utf-8">
+    <title>Carefree</title>
     <meta name="author" content="Yuxuan 'Ethan' Chen // University of Notre Dame">
-    <!-- <link rel="stylesheet" type="text/css" href="css/site.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- Firebase -->
     <!--
 	  <script src="https://cdn.firebase.com/js/client/1.0.11/firebase.js"></script>
@@ -14,36 +12,46 @@
   </head>
   <body>
     <div id="containter">
+      
       <header>
        <div id="title-bar">
-        <span>CAREFREE<br></span>
+        <span style=color:white><a href="">CareFree<br><a></span>
        </div>
-       <div id="subtitle-tar">
-        <span><i>A healthcare platform that ensures care is delivered as soon as possible</i><br></span>
+       <div id="subtitle-bar">
+        <span>Fast delivery of care<br></span>
        </div>
+       <nav>
+       </nav>
       </header>
-      <div id="navbar">
-       <div id="alarms-bar">
-         <ul>
-         </ul>
-       </div>
-       <div id="processed-bar">
-         <ul>
-         </ul>
-       </div>
-      </div>
-      <div id="content">
-        <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Thomas%20M.%20Siebel%20Center%20for%20Computer%20Science%20201%20N.%20Goodwin%20Ave.%20Urbana%2C%20IL%2061801&key=AIzaSyAcbsbOVH5hmhnKmt-JMRqHTBckooVycsY"></iframe>
+
+      <div id="two-columns">
+        <div id="navbar">
+         <div id="alarms-bar">
+           <ul>
+           </ul>
+         </div>
+         <div id="processed-bar">
+           <ul>
+           </ul>
+         </div>
+        </div>
+        <div id="content">
+          <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Thomas%20M.%20Siebel%20Center%20for%20Computer%20Science%20201%20N.%20Goodwin%20Ave.%20Urbana%2C%20IL%2061801&key=AIzaSyAcbsbOVH5hmhnKmt-JMRqHTBckooVycsY"></iframe>
+        </div>
       </div>
     </div>
   	
     <!-- Ember Data and EmberFire -->
-    <!--
-    <script src="js/libs/handlebars-1.0.0.js"></script>
+    
     <script src="js/libs/jquery-1.10.2.min.js"></script>
-    <script src="js/libs/ember.js"></script>
-    <script src="js/emberfire.js"></script>
-  	<script src="http://builds.emberjs.com/canary/ember-data.js"></script>
-    -->
+    <script src="js/libs/handlebars-1.1.2.js"></script>
+    <script src="js/libs/ember-1.4.0.js"></script>
+    <script src="js/libs/ember-data.js"></script>
+    <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.11/firebase.js'></script>
+    <script src="js/libs/emberfire.js"></script>
+    <script src="js/libs/moment.js"></script>
+    <script src="js/libs/md5.js"></script>
+    <script src="js/libs/markdown.js"></script>
+    <!-- <script src="js/app.js"></script> -->
   </body>
 </html>
