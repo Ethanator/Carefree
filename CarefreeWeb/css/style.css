@@ -47,17 +47,24 @@ header {
 }
 
 #two-columns {
-	width: 100%;
 	position: absolute;
+	width: 100%;
+	left: 0px;
 	top: 100px;
 }
 
 #navbar {
+	width: 38%;
+	float: left;
+	padding-top: 0;
+}
 
+#navbar span {
+	padding-left: 30px;
 }
 
 #alarms-bar {
-
+	padding-top: 0;
 }
 
 #processed-bar {
@@ -65,6 +72,42 @@ header {
 }
 
 #content {
-
+	margin-left: 38%;
 }
 
+.navtitle {
+	font-family: Copperplate, Copperplate Gothic Light, sans-serif;
+	position: relative;
+	font-size: 1.5em;
+	top: 10px;
+	left: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding-top: 0;
+  padding-left: 0;
+}
+ 
+h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+ 
+li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+ 
+li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+ 
+li {
+  padding: 40px;
+  overflow: auto;
+}
+ 
+li:hover {
+  background: #eee;
+  cursor: pointer;
+}
