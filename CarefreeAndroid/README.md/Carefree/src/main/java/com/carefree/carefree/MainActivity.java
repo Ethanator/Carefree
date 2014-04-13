@@ -48,6 +48,40 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
+    public void saveCard(){
+        String filename="mycard";
+        FileOutputStream ostream;
+
+        EditText firstName=(EditText) findViewById(R.id.first_name);
+        EditText lastName=(EditText) findViewById(R.id.last_name);
+        EditText contactFirstName=(EditText) findViewById(R.id.contact_first_name);
+        EditText contactLastName=(EditText) findViewById(R.id.contact_last_name);
+        EditText contactPhoneNumber=(EditText) findViewById(R.id.contact_phone_number);
+        EditText allergies=(EditText) findViewById(R.id.allergies);
+
+        String fn=firstName.getText().toString();
+        String ln=lastName.getText().toString();
+        String cfn=contactFirstName.getText().toString();
+        String cln=contactLastName.getText().toString();
+        String cpn=contactPhoneNumber.getText().toString();
+        String al=allergies.getText().toString();
+        try{
+            outputStream=openFileOutput(filename,Context.MODE_PRIVATE)
+            outputStream.write(fn.getBytes());
+            outputStream.write(ln.getBytes());
+            outputStream.write(cfn.getBytes());
+            outputStream.write(cln.getBytes());
+            outputStream.write(cpn.getBytes());
+            outputStream.write(al.getBytes());
+            outputStream.close();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+
+    }
+
 
 
 }
