@@ -24,6 +24,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        string filePath="mycard.txt";
+        File file = new File(filePath);
+        if(file.exists()){
+            Intent intent= new Intent(this,)
+
+        }
+
         Button btn = (Button) findViewById(R.id.button_save);
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -95,13 +102,13 @@ public class MainActivity extends Activity {
             //Log.d("Debug1", "It works here");
             try {
                 ostream = openFileOutput(filename, Context.MODE_PRIVATE);
-                ostream.write(data.get(0).getBytes());
-                ostream.write(data.get(1).getBytes());
-                ostream.write(data.get(2).getBytes());
-                ostream.write(data.get(3).getBytes());
-                ostream.write(data.get(4).getBytes());
-                ostream.write(data.get(5).getBytes());
-                ostream.write(data.get(6).getBytes());
+                ostream.write(("FirstName\t"+data.get(0)).getBytes());
+                ostream.write(("LastName\t"+data.get(1)).getBytes());
+                ostream.write(("Age\t"+data.get(2)).getBytes());
+                ostream.write(("Allergies\t"+data.get(3)).getBytes());
+                ostream.write(("ContactFirstName\t"+data.get(4)).getBytes());
+                ostream.write(("ContactLastNamedata\t"+data.get(5)).getBytes());
+                ostream.write(("ContactPhoneNumber\t"+data.get(6)).getBytes());
                 ostream.close();
             } catch (Exception e) {
                 e.printStackTrace();
