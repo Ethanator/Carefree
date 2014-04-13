@@ -51,6 +51,10 @@
             android:name="com.carefree.carefree.DisplayInfoActivity"
             android:label="@string/title_activity_display_info" >
         </activity>
+        <activity
+            android:name="com.carefree.carefree.useGPS"
+            android:label="@string/title_activity_use_gps" >
+        </activity>
     </application>
 
 </manifest>

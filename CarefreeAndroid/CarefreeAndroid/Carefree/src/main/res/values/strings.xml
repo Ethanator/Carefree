@@ -23,5 +23,6 @@
     <string name="local_file_header">"FirstName\tLastName\tAge\tAllergies\tContactFirstName\tContactLastName\tContactPhone\n"</string>
     <string name="local_file_name">"mycard.txt"</string>
     <string name="firebase_url">"https://carefree.firebaseio.com"</string>
+    <string name="title_activity_use_gps">useGPS</string>
 
 </resources>

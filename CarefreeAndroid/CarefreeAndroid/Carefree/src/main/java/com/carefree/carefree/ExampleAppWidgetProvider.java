@@ -84,7 +84,7 @@ public class ExampleAppWidgetProvider extends AppWidgetProvider {
 
             String csvString = "";
             String outString = "";
-            String filename = "mycard.txt";
+            String filename = context.getString(R.string.local_file_name);
             FileInputStream fis;
 
             try {
