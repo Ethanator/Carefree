@@ -60,7 +60,7 @@ header {
 }
 
 #navbar span {
-	padding-left: 30px;
+	padding-left: 20px;
 }
 
 #alarms-bar {
@@ -73,6 +73,7 @@ header {
 
 #content {
 	margin-left: 38%;
+	padding-left: 5%;
 }
 
 .navtitle {
@@ -105,6 +106,7 @@ li p {
 li {
   padding: 40px;
   overflow: auto;
+  border-bottom: 1px dotted #ccc;
 }
  
 li:hover {

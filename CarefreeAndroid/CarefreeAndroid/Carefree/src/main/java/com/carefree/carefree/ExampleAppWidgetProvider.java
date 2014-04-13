@@ -17,7 +17,7 @@ import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.util.Log;
 
-<<<<<<< HEAD
+
 import com.firebase.client.Firebase;
 
 import java.io.FileInputStream;
@@ -28,12 +28,10 @@ import java.util.List;
 import java.util.Map;
 
 import static android.provider.Settings.Global.getString;
-=======
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
->>>>>>> 1f6e5c1e8ef81397ceb05da5aa7d4567cf799bd6
 
 
 public class ExampleAppWidgetProvider extends AppWidgetProvider {

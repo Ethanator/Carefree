@@ -7,8 +7,8 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="D:\Norman\Documents\GitHub\Carefree\CarefreeAndroid\CarefreeAndroid" />
-            <option value="D:\Norman\Documents\GitHub\Carefree\CarefreeAndroid\CarefreeAndroid\Carefree" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Carefree" />
           </set>
         </option>
       </GradleProjectSettings>
