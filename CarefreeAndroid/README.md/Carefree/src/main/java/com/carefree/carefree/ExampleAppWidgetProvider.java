@@ -9,7 +9,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.appwidget.AppWidgetProvider;
 import android.net.Uri;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.RemoteViews;
+import android.widget.TextView;
+
 import java.util.List;
 
 
@@ -23,7 +27,7 @@ public class ExampleAppWidgetProvider extends AppWidgetProvider {
             int appWidgetId = appWidgetIds[i];
 
             // Create an Intent to launch ExampleActivity
-            Intent intent = new Intent(context, MainActivity.class);
+            Intent intent = new Intent(context, LocationActivity.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
 
@@ -34,7 +38,7 @@ public class ExampleAppWidgetProvider extends AppWidgetProvider {
             // to the button
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_design);
            views.setOnClickPendingIntent(R.id.button, pendingIntent);
-
+            views.setTextViewText(R.id.textView, "Test message PLus more data but it does remove the default");
             // Tell the AppWidgetManager to perform an update on the current app widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
