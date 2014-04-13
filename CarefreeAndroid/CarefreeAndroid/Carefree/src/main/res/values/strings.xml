@@ -13,6 +13,7 @@
     <string name="contact_phone_number">Your contact\'s phone number</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
+    <string name="button_alert">Alert</string>
     <string name="button_save">Save Card</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_display_message">DisplayMessageActivity</string>

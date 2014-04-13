@@ -17,7 +17,10 @@ import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.util.Log;
 
-import java.util.List;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 
 public class ExampleAppWidgetProvider extends AppWidgetProvider {
@@ -37,7 +40,7 @@ public class ExampleAppWidgetProvider extends AppWidgetProvider {
         PendingIntent actionPendingIntent = PendingIntent.getBroadcast(context, 0, active, PendingIntent.FLAG_UPDATE_CURRENT);
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), layoutID);
         remoteViews.setOnClickPendingIntent(R.id.button, actionPendingIntent);
-        remoteViews.setTextViewText(R.id.textView, "Test message PLus more data but it does remove the default");
+        remoteViews.setTextViewText(R.id.textView, "In case of Emergency");
         appWidgetManager.updateAppWidget(appWidgetIds, remoteViews);
         remoteViews.setOnClickPendingIntent(R.id.button, actionPendingIntent);
         context.startService(active);
@@ -64,7 +67,7 @@ public class ExampleAppWidgetProvider extends AppWidgetProvider {
     @Override
     public void onReceive(Context context, Intent intent) {
         RemoteViews updateViews;
-
+        int j = 0;
         if (intent.getAction().equals(SCREEN_ON)) {
             String msg = "";
             try {
@@ -78,7 +81,32 @@ public class ExampleAppWidgetProvider extends AppWidgetProvider {
 
             RemoteViews control = new RemoteViews(context.getPackageName(),
                     R.layout.widget_design_son);
-            control.setTextViewText(R.id.textView, "Updated Screen On");
+
+            String csvString = "";
+            String outString = "";
+            String filename = "mycard.txt";
+            FileInputStream fis;
+
+            try {
+                fis = context.openFileInput(filename);
+                byte[] input = new byte[fis.available()];
+                while (fis.read(input) != -1) {
+                    csvString += new String(input);
+                }
+                String[] keys = csvString.split("\n")[0].split("\t");
+                String[] vals = csvString.split("\n")[1].split("\t");
+
+                for(j = 0;j < 6; j++){
+
+                    outString += new String(keys[j]+": "+ vals[j]+"\n");
+
+                }
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            control.setTextViewText(R.id.textView, outString);
 
             ComponentName cn = new ComponentName(context,
                     ExampleAppWidgetProvider.class);
