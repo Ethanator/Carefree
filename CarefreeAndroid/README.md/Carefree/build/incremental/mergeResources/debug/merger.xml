@@ -68,6 +68,8 @@
                 </string>
                 <string name="first_name" >Enter your first name here.
                 </string>
+                <string name="button_save" >Save Card
+                </string>
                 <string name="title_activity_location_message" >LocationActivity
                 </string>
                 <string name="hello_world" >Hello world!
