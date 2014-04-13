@@ -119,7 +119,7 @@ public class MainActivity extends Activity {
             }
             ostream.write('\n');
             ostream.close();
-            uploadData();
+            uploadPatientInfo();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -133,7 +133,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    public void uploadData() {
+    public void uploadPatientInfo() {
         Firebase f = new Firebase(getString(R.string.firebase_url));
 
         String csvString = "";
@@ -152,7 +152,7 @@ public class MainActivity extends Activity {
             Map<String, String> map = new HashMap<String, String>();
             for (int i = 0; i < keys.length; ++i)
                 map.put(keys[i], vals[i]);
-            f.push().setValue(map);
+            f.child("Patients").push().setValue(map);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

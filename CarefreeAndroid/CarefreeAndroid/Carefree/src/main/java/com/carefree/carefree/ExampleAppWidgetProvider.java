@@ -17,7 +17,16 @@ import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.util.Log;
 
+import com.firebase.client.Firebase;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import static android.provider.Settings.Global.getString;
 
 
 public class ExampleAppWidgetProvider extends AppWidgetProvider {
@@ -89,4 +98,7 @@ public class ExampleAppWidgetProvider extends AppWidgetProvider {
         super.onReceive(context, intent);
     }
 
+    public void uploadAlarm() {
+
+    }
 }
