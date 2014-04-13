@@ -1,12 +1,17 @@
 package com.carefree.carefree;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
+import android.widget.Button;
 import android.widget.EditText;
+import java.io.FileOutputStream;
+import 	android.content.Context;
 
 public class MainActivity extends Activity {
     public final static String EXTRA_MESSAGE = "com.Carefree.Carefree.MESSAGE";
@@ -15,6 +20,14 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button btn = (Button) findViewById(R.id.button_save);
+        btn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                saveCard();
+            }
+        });
     }
 
 
@@ -50,7 +63,7 @@ public class MainActivity extends Activity {
 
     public void saveCard(){
         String filename="mycard";
-        FileOutputStream ostream;
+       FileOutputStream ostream;
 
         EditText firstName=(EditText) findViewById(R.id.first_name);
         EditText lastName=(EditText) findViewById(R.id.last_name);
@@ -65,15 +78,16 @@ public class MainActivity extends Activity {
         String cln=contactLastName.getText().toString();
         String cpn=contactPhoneNumber.getText().toString();
         String al=allergies.getText().toString();
+        Log.d("Debug1", "It works here");
         try{
-            outputStream=openFileOutput(filename,Context.MODE_PRIVATE)
-            outputStream.write(fn.getBytes());
-            outputStream.write(ln.getBytes());
-            outputStream.write(cfn.getBytes());
-            outputStream.write(cln.getBytes());
-            outputStream.write(cpn.getBytes());
-            outputStream.write(al.getBytes());
-            outputStream.close();
+            ostream=openFileOutput(filename,Context.MODE_PRIVATE);
+            ostream.write(fn.getBytes());
+            ostream.write(ln.getBytes());
+            ostream.write(cfn.getBytes());
+            ostream.write(cln.getBytes());
+            ostream.write(cpn.getBytes());
+            ostream.write(al.getBytes());
+            ostream.close();
         }
         catch(Exception e){
             e.printStackTrace();
