@@ -3,6 +3,7 @@ package com.carefree.carefree;
 /**
  * Created by Normn on 4/12/2014.
  */
+import android.app.Activity;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
@@ -16,6 +17,11 @@ import android.widget.EditText;
 import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.util.Log;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.widget.Toast;
 
 
 import com.firebase.client.Firebase;
@@ -45,7 +51,7 @@ public class ExampleAppWidgetProvider extends AppWidgetProvider {
 
 
            layoutID = R.layout.widget_design;
-
+        Intent gps=new Intent(context, useGPS.class);
         Intent active = new Intent(context, ExampleAppWidgetProvider.class);
         active.setAction(SCREEN_ON);
         PendingIntent actionPendingIntent = PendingIntent.getBroadcast(context, 0, active, PendingIntent.FLAG_UPDATE_CURRENT);
