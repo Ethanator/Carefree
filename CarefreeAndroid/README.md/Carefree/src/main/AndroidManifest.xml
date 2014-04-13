@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.carefree.carefree" >
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />.
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+.
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -26,7 +29,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.myfirstapp.MainActivity" />
         </activity>
-
         <activity
             android:name="com.carefree.carefree.LocationActivity"
             android:label="@string/title_activity_location_message" >
@@ -36,15 +38,20 @@
                 android:value="com.example.myfirstapp.MainActivity" />
         </activity>
 
-        <receiver android:name="ExampleAppWidgetProvider" >
+        <receiver android:name="com.carefree.carefree.ExampleAppWidgetProvider" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
-            <meta-data android:name="android.appwidget.provider"
+
+            <meta-data
+                android:name="android.appwidget.provider"
                 android:resource="@xml/widget_example" />
         </receiver>
+
+        <activity
+            android:name="com.carefree.carefree.DisplayInfoActivity"
+            android:label="@string/title_activity_display_info" >
+        </activity>
     </application>
-
-
 
 </manifest>
