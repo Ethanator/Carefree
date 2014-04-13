@@ -58,6 +58,8 @@
                 </string>
                 <string name="allergies" >Enter any allergies here.
                 </string>
+                <string name="age" >Enter your age.
+                </string>
                 <string name="contact_last_name" >Enter your contact\'s last name here.
                 </string>
                 <string name="button_send" >Send
