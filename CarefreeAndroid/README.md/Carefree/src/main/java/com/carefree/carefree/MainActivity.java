@@ -63,39 +63,55 @@ public class MainActivity extends Activity {
 
     public void saveCard(){
         String filename="mycard";
-       FileOutputStream ostream;
+        FileOutputStream ostream;
+        int save=1;
 
         EditText firstName=(EditText) findViewById(R.id.first_name);
         EditText lastName=(EditText) findViewById(R.id.last_name);
+        EditText age=(EditText) findViewById(R.id.age);
         EditText contactFirstName=(EditText) findViewById(R.id.contact_first_name);
         EditText contactLastName=(EditText) findViewById(R.id.contact_last_name);
         EditText contactPhoneNumber=(EditText) findViewById(R.id.contact_phone_number);
         EditText allergies=(EditText) findViewById(R.id.allergies);
 
-        String fn=firstName.getText().toString();
-        String ln=lastName.getText().toString();
-        String cfn=contactFirstName.getText().toString();
-        String cln=contactLastName.getText().toString();
-        String cpn=contactPhoneNumber.getText().toString();
-        String al=allergies.getText().toString();
-        Log.d("Debug1", "It works here");
-        try{
-            ostream=openFileOutput(filename,Context.MODE_PRIVATE);
-            ostream.write(fn.getBytes());
-            ostream.write(ln.getBytes());
-            ostream.write(cfn.getBytes());
-            ostream.write(cln.getBytes());
-            ostream.write(cpn.getBytes());
-            ostream.write(al.getBytes());
-            ostream.close();
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+        String data[7];
 
+        data[0]=firstName.getText().toString();
+        data[1]=lastName.getText().toString();
+        data[2]=age.getText().toString();
+        data[3]=allergies.getText().toString();
+        data[4]=contactFirstName.getText().toString();
+        data[5]=contactLastName.getText().toString();
+        data[6]=contactPhoneNumber.getText().toString();
+        for(int i=0;i<6;i++){
+                   if(data[i].equals("")) save=0;
 
+        }
+    if(save){
+            //Log.d("Debug1", "It works here");
+            try{
+                ostream=openFileOutput(filename,Context.MODE_PRIVATE);
+                ostream.write(data[0].getBytes());
+                ostream.write(data[1].getBytes());
+                ostream.write(data[2].getBytes());
+                ostream.write(data[3].getBytes());
+                ostream.write(data[4].getBytes());
+                ostream.write(data[5].getBytes());
+                ostream.write(data[6].getBytes());
+                ostream.close();
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
     }
+    else{
+        Context context = getApplicationContext();
+        CharSequence text = "You need to fill out all of the fields.";
+        int duration = Toast.LENGTH_SHORT;
 
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+    }
 
 
 }
