@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/README.md/Carefree/src/main/main.iml" filepath="$PROJECT_DIR$/README.md/Carefree/src/main/main.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/CarefreeAndroid.iml" filepath="$PROJECT_DIR$/.idea/CarefreeAndroid.iml" />
+>>>>>>> 4abf42d968a433799d8a5f75288cacf7b49f6929
+    </modules>
+  </component>
+</project>
+

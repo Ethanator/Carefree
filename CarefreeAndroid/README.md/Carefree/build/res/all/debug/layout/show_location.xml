@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="147dp"
+        android:layout_height="86dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/textView"
+        android:layout_gravity="left|top" />
+
+    <TextView
+        android:layout_width="133dp"
+        android:layout_height="35dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/textView2"
+        android:layout_gravity="left|center_vertical" />
+</FrameLayout><!-- From: file:/C:/Users/Normn/AndroidStudioProjects/AndroidWearPreview/Carefree/Android/Carefree/Carefree/src/main/res/layout/show_location.xml -->
